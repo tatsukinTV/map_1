@@ -10,9 +10,9 @@ import time
 
 pages = ['range', 'scatter', 'bar_graph', 'stcatter&heat']
 
-st.sidebar.selectbox('ページ選択', pages)
+selector = st.sidebar.selectbox('ページ選択', pages)
 
-if pages == 'range':
+if selector == 'range':
     # サンプル用の緯度経度データを作成する
     sales_office = pd.DataFrame(
         data=[[32.0,131.1],
@@ -53,7 +53,7 @@ if pages == 'range':
     folium_static(m) # 地図情報を表示
 
 
-elif pages == 'scatter':
+elif selector == 'scatter':
     """
     # 初めての Streamlit
     データフレームを表として出力できます:
@@ -111,7 +111,7 @@ elif pages == 'scatter':
             time.sleep(0.01)
 
 
-elif pages == 'bar_graph':
+elif selector == 'bar_graph':
     # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
     st.title('Osaka Precipitation')
 
@@ -173,7 +173,7 @@ elif pages == 'bar_graph':
     map(data, midpoint[0], midpoint[1], 8.5)
 
 
-elif pages == 'scatter&heat':
+elif selector == 'scatter&heat':
     class MyDecoder(json.JSONDecoder):
         def decode(self, s):
             result = super().decode(s)
