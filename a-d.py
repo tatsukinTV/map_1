@@ -8,7 +8,7 @@ import json
 import requests
 import time
 
-pages = ['range', 'scatter', 'bar_graph', 'stcatter&heat']
+pages = ['range', 'scatter', 'bar_graph', 'scatter&heat']
 
 selector = st.sidebar.selectbox('ページ選択', pages)
 
