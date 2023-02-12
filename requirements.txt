@@ -4,5 +4,4 @@ streamlit_folium
 pandas
 numpy
 pydeck
-json
 requests
